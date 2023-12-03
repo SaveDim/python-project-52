@@ -92,10 +92,10 @@ DATABASES = {
     }
 }
 
-# database_url = os.environ.get("DATABASE_URL")
+database_url = os.environ.get("DATABASE_URL")
 
-DATABASES['default'] = dj_database_url.config(
-    default="postgres://savedim:p2lqOMNZ60Bt0C6FndZ2GLPhp8wSC9CE@dpg-clm90ppfb9qs7399htsg-a.frankfurt-postgres.render.com/task_manager_db_86ds",
+DATABASES['default'] = dj_database_url.parse(
+    database_url,
     conn_max_age=600,
     conn_health_checks=True,
 )
