@@ -35,7 +35,6 @@ DEBUG = 'RENDER' not in os.environ
 # DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 # DEBUG = True
 
-
 LOCAL_HOST = os.getenv('HOST')
 
 ALLOWED_HOSTS = [
