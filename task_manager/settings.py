@@ -32,6 +32,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
+
+
 # DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 # DEBUG = True
 
@@ -99,17 +101,17 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
-
-DATABASE_URL = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.config(
-    default=DATABASE_URL,
-    conn_max_age=600,
-    conn_health_checks=True,
+if not DEBUG:
+    DATABASE_URL = os.environ.get("DATABASE_URL")
+    DATABASES['default'] = dj_database_url.config(
+        default=DATABASE_URL,
+        conn_max_age=600,
+        conn_health_checks=True,
 )
 
 # DATABASES = {
