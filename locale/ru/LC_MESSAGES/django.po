@@ -43,4 +43,4 @@ msgstr "Регистрация"
 #: task_manager/templates/base.html:19
 #: task_manager/templates/base.html:39
 msgid "Task Manager"
-msgstr "Диспетчер задач"
+msgstr "Менеджер задач"
