@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "task_manager",
-    "user",
+    # "user",
     "django_bootstrap5",
 ]
 
