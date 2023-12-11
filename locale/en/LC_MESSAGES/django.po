@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-04 10:38+0000\n"
+"POT-Creation-Date: 2023-12-11 13:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: task_manager/settings.py:149
-msgid "English"
-msgstr ""
 
-#: task_manager/settings.py:150
-msgid "Russian"
-msgstr ""
-
-#: task_manager/templates/base.html:19 task_manager/templates/base.html:39
+#: task_manager/templates/base.html:19
 msgid "Task Manager"
 msgstr ""
 
 #: task_manager/templates/base.html:26
+#: task_manager/templates/users/user_list.html:7 users/views.py:10
 msgid "Users"
 msgstr ""
 
@@ -39,4 +33,44 @@ msgstr ""
 
 #: task_manager/templates/base.html:32
 msgid "Sign up"
+msgstr ""
+
+#: task_manager/templates/users/user_list.html:12
+msgid "User name"
+msgstr ""
+
+#: task_manager/templates/users/user_list.html:13
+msgid "Full name"
+msgstr ""
+
+#: task_manager/templates/users/user_list.html:14
+msgid "Created at"
+msgstr ""
+
+#: task_manager/templates/users/user_list.html:27
+msgid "Edit"
+msgstr ""
+
+#: task_manager/templates/users/user_list.html:29
+msgid "Remove"
+msgstr ""
+
+#: users/views.py:11
+msgid "ID"
+msgstr ""
+
+#: users/views.py:12
+msgid "username"
+msgstr ""
+
+#: users/views.py:13
+msgid "full name"
+msgstr ""
+
+#: users/views.py:14
+msgid "created at"
+msgstr ""
+
+#: users/views.py:22 users/views.py:29 users/views.py:35
+msgid "user_list"
 msgstr ""
