@@ -156,7 +156,7 @@ LOCALE_PATHS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
     ('en', 'English'),
@@ -168,10 +168,12 @@ LANGUAGES = [
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-STATICFIELS_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
+# STATICFIELS_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # if not DEBUG:
 #     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
