@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name">{% trans "First name" %}</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Имя">
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">{% trans "Last name" %}</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Фамилия">
+        </div>
+
+        <div class="form-group">
+            <label for="username">{% trans "User name" %}</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Имя пользователя"
+                   required maxlength="150">
+            <small class="form-text text-muted">Обязательное поле. Не более 150 символов. Только буквы, цифры и символы
+                @/./+/-/_.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="password">{% trans "Password" %}</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Пароль" required>
+            <small class="form-text text-muted">Ваш пароль должен содержать как минимум 3 символа.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="password_confirm">Подтверждение пароля</label>
+            <input type="password" class="form-control" id="password_confirm" name="password_confirm"
+                   placeholder="Подтверждение пароля" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Зарегистрировать</button>
+    </form>
+
+{% endblock %}
+```

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+    <h2>Вход</h2>
+    <form method="post" action="{% url 'user_login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username">{% trans "User name" %}</label>
+            <input type="text" class="form-control" id="id_username" name="username" placeholder="Имя пользователя"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label for="id_password">{% trans "Password" %}</label>
+            <input type="password" class="form-control" id="id_password" name="password"
+                   placeholder="{% trans "Password" %}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+    </form>
+{% endblock %}

@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
@@ -16,10 +17,14 @@ class UserListView(ListView):
 
 
 class UserCreateView(CreateView):
-    model = User
-    template_name = "user_create.html"
-    fields = ["username", "password", "first_name", "last_name"]
-    success_url = _("user_list")
+    form_class = UserCreationForm
+    template_name = "users/user_create.html"
+    success_url = _("login")  # В ДЕМО ПРОЕКТЕ ПЕРЕЗОД НА СТРАНИЦУ ЛОГИНА
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["header"] = _("Create user")
+        return context
 
 
 class UserUpdateView(UpdateView):
