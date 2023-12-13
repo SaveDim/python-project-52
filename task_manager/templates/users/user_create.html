@@ -4,43 +4,48 @@
 {% load i18n %}
 
 {% block content %}
-    <h2>{% trans "Registration" %}</h2>
-    <form method="post">
-        {% csrf_token %}
-        {#        {{ form.as_p }}#}
-        <div class="form-group">
-            <label for="first_name">{% trans 'Name' %}</label>
-            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="{% trans "Name" %}">
-        </div>
+        <h1>{% trans "Registration" %}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {#        {{ form.as_p }}#}
 
-        <div class="form-group">
-            <label for="last_name">{% trans "Surname" %}</label>
-            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="{% trans "Surname" %}">
-        </div>
+            <div class="form-group">
+                <label for="first_name">{% trans 'Name' %}</label>
+                <input type="text" class="form-control" id="first_name" name="first_name"
+                       placeholder="{% trans "Name" %}">
+            </div>
 
-        <div class="form-group">
-            <label for="username">{% trans "User name" %}</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="{% trans "User name" %}"
-                    required maxlength="150">
-            <small class="form-text text-muted">{% trans "No more than 150 characters. Only letters, numbers and @/./+/-/_. simbols" %}</small>
-{#            Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.#}
-        </div>
+            <div class="form-group">
+                <label for="last_name">{% trans "Surname" %}</label>
+                <input type="text" class="form-control" id="last_name" name="last_name"
+                       placeholder="{% trans "Surname" %}">
+            </div>
 
-        <div class="form-group">
-            <label for="password">{% trans "Password" %}</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder={% trans "Password" %} required>
-            <small class="form-text text-muted">{% trans "Your password should contain at least 3 characters" %}</small>
-        </div>
+            <div class="form-group">
+                <label for="username">{% trans "User name" %}</label>
+                <input type="text" class="form-control" id="username" name="username"
+                       placeholder="{% trans "User name" %}"
+                       required maxlength="150">
+                <small class="form-text text-muted">{% trans "No more than 150 characters. Only letters, numbers and @/./+/-/_. simbols" %}</small>
+                {#            Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.#}
+            </div>
 
-        <div class="form-group">
-            <label for="password_confirm">{% trans "Password confirmation" %}</label>
-            <input type="password" class="form-control" id="password_confirm" name="password_confirm"
-                   placeholder="{% trans "Password confirmation" %}" required>
-            <small class="form-text text-muted">{% trans "Please, enter your password again to confirm." %}</small>
-        </div> <br>
+            <div class="form-group">
+                <label for="password">{% trans "Password" %}</label>
+                <input type="password" class="form-control" id="password" name="password"
+                       placeholder={% trans "Password" %} required>
+                <small class="form-text text-muted">{% trans "Your password should contain at least 3 characters" %}</small>
+            </div>
 
-        <button type="submit" class="btn btn-primary">{% trans "Register" %}</button>
-    </form>
+            <div class="form-group">
+                <label for="password_confirm">{% trans "Password confirmation" %}</label>
+                <input type="password" class="form-control" id="password_confirm" name="password_confirm"
+                       placeholder="{% trans "Password confirmation" %}" required>
+                <small class="form-text text-muted">{% trans "Please, enter your password again to confirm." %}</small>
+            </div>
+            <br>
 
+            <button type="submit" class="btn btn-primary">{% trans "Register" %}</button>
+        </form>
 {% endblock %}
 ```
