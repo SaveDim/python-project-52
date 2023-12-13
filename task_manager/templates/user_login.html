@@ -4,12 +4,12 @@
 {% load i18n %}
 
 {% block content %}
-    <h2>Вход</h2>
+    <h2>{% trans "Entrance" %}</h2>
     <form method="post" action="{% url 'user_login' %}">
         {% csrf_token %}
         <div class="form-group">
             <label for="id_username">{% trans "User name" %}</label>
-            <input type="text" class="form-control" id="id_username" name="username" placeholder="Имя пользователя"
+            <input type="text" class="form-control" id="id_username" name="username" placeholder="{% trans "User name" %}"
                    required>
         </div>
 

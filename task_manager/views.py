@@ -1,8 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
+from django.utils.translation import gettext_lazy as _
 from django.views import View
 from django.views.generic import CreateView
-from django.utils.translation import gettext_lazy as _
 
 
 class IndexView(View):
