@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 12:52+0300\n"
+"POT-Creation-Date: 2023-12-14 11:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgid "Task Manager"
 msgstr "Менеджер задач"
 
 #: task_manager/templates/base.html:26
-#: task_manager/templates/users/user_list.html:7 users/views.py:12
+#: task_manager/templates/users/user_list.html:7 users/views.py:14
 msgid "Users"
 msgstr "Пользователи"
 
@@ -43,16 +43,12 @@ msgstr "Вход"
 
 #: task_manager/templates/user_login.html:11
 #: task_manager/templates/user_login.html:12
-#: task_manager/templates/users/user_create.html:22
-#: task_manager/templates/users/user_create.html:23
 #: task_manager/templates/users/user_list.html:12
 msgid "User name"
 msgstr "Имя пользователя"
 
 #: task_manager/templates/user_login.html:17
 #: task_manager/templates/user_login.html:19
-#: task_manager/templates/users/user_create.html:30
-#: task_manager/templates/users/user_create.html:31
 msgid "Password"
 msgstr "Пароль"
 
@@ -64,37 +60,7 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: task_manager/templates/users/user_create.html:12
-#: task_manager/templates/users/user_create.html:13
-msgid "Name"
-msgstr "Имя"
-
-#: task_manager/templates/users/user_create.html:17
-#: task_manager/templates/users/user_create.html:18
-msgid "Surname"
-msgstr "Фамилия"
-
-#: task_manager/templates/users/user_create.html:25
-msgid ""
-"No more than 150 characters. Only letters, numbers and @/./+/-/_. simbols"
-msgstr ""
-"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
-"+/-/_."
-
-#: task_manager/templates/users/user_create.html:32
-msgid "Your password should contain at least 3 characters"
-msgstr "Ваш пароль должен содержать как минимум 3 символа."
-
-#: task_manager/templates/users/user_create.html:36
-#: task_manager/templates/users/user_create.html:38
-msgid "Password confirmation"
-msgstr "Подтверждение пароля"
-
-#: task_manager/templates/users/user_create.html:39
-msgid "Please, enter your password again to confirm."
-msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
-
-#: task_manager/templates/users/user_create.html:42
+#: task_manager/templates/users/user_create.html:47
 msgid "Register"
 msgstr "Зарегистрировать"
 
@@ -122,32 +88,57 @@ msgstr ""
 msgid "Login user"
 msgstr ""
 
-#: users/views.py:13
+#: users/views.py:15
 msgid "ID"
 msgstr ""
 
-#: users/views.py:14
+#: users/views.py:16
 msgid "username"
 msgstr "Имя пользователя"
 
-#: users/views.py:15
+#: users/views.py:17
 msgid "full name"
 msgstr ""
 
-#: users/views.py:16
+#: users/views.py:18
 msgid "created at"
 msgstr ""
 
-#: users/views.py:23
+#: users/views.py:25
 msgid "login"
 msgstr ""
 
-#: users/views.py:27
+#: users/views.py:29
 #, fuzzy
 #| msgid "Created at"
 msgid "Create user"
 msgstr "Дата создания"
 
-#: users/views.py:35 users/views.py:41
+#: users/views.py:36
+msgid "User is successfully created"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: users/views.py:46 users/views.py:52
 msgid "user_list"
 msgstr ""
+
+#~ msgid "Name"
+#~ msgstr "Имя"
+
+#~ msgid "Surname"
+#~ msgstr "Фамилия"
+
+#~ msgid ""
+#~ "No more than 150 characters. Only letters, numbers and @/./+/-/_. simbols"
+#~ msgstr ""
+#~ "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы "
+#~ "@/./+/-/_."
+
+#~ msgid "Your password should contain at least 3 characters"
+#~ msgstr "Ваш пароль должен содержать как минимум 3 символа."
+
+#~ msgid "Password confirmation"
+#~ msgstr "Подтверждение пароля"
+
+#~ msgid "Please, enter your password again to confirm."
+#~ msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
