@@ -1,4 +1,6 @@
+from django.contrib import messages
 from django.contrib.auth.models import User
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
@@ -20,12 +22,20 @@ class UserListView(ListView):
 class UserCreateView(CreateView):
     form_class = UserCreateForm
     template_name = "users/user_create.html"
-    success_url = _("login")  # В ДЕМО ПРОЕКТЕ ПЕРЕЗОД НА СТРАНИЦУ ЛОГИНА
+    success_url = _("login")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["header"] = _("Create user")
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = UserCreateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'User created successfully!')
+            return redirect('user_login')
+        return render(request, 'users/user_create.html', {'form': form})
 
 
 class UserUpdateView(UpdateView):
