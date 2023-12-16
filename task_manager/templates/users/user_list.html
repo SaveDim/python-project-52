@@ -5,17 +5,18 @@
 {% block title %}Users list{% endblock %}
 {% block content %}
     <h1>{% trans 'Users' %}</h1>
-    <table class="table text-black">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>{% trans 'User name' %}</th>
-            <th>{% trans 'Full name' %}</th>
-            <th>{% trans 'Created at' %}</th>
-            <th></th>
-        </tr>
-        </thead>
-        {% if users %}
+    {% if users %}
+        <table class="table text-black">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>{% trans 'User name' %}</th>
+                <th>{% trans 'Full name' %}</th>
+                <th>{% trans 'Created at' %}</th>
+                <th></th>
+            </tr>
+            </thead>
+
             <tbody>
             {% for user in users %}
                 <tr>
@@ -31,6 +32,8 @@
                 </tr>
             {% endfor %}
             </tbody>
-        {% endif %}
-    </table>
+        </table>
+    {% else %}
+        <h3>No one user registered yet</h3>
+    {% endif %}
 {% endblock %}
