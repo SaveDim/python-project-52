@@ -1,9 +1,11 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
 from django.views import View
 from django.views.generic import CreateView
-
 
 class IndexView(View):
 
