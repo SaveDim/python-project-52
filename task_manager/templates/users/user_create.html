@@ -4,11 +4,11 @@
 {% load i18n %}
 
 {% block title %}
-    {{ title }} | {% translate 'Task Manager' %}
+    {{ header }}
 {% endblock %}
 
 {% block content %}
-    <h1 class="my-4">{{ title }}</h1>
+    <h1 class="my-4">{{ header }}</h1>
 
     <form method="post">
         {% csrf_token %}

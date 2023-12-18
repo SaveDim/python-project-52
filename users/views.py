@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from users.forms import UserCreateForm
 from .models import TaskManagerUser
@@ -13,7 +14,7 @@ class UserListView(ListView):
     extra_context = {"header": _("Users")}
 
 
-class UserCreateView(CreateView):
+class UserCreateView(SuccessMessageMixin, CreateView):
     template_name = "users/user_create.html"
     model = TaskManagerUser
     form_class = UserCreateForm
@@ -24,7 +25,7 @@ class UserCreateView(CreateView):
                      }
 
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(SuccessMessageMixin, UpdateView):
     model = TaskManagerUser
     template_name = "users/user_create.html"
     form_class = UserCreateForm
