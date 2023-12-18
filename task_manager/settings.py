@@ -144,7 +144,7 @@ LOCALE_PATHS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'en-En'
 
 LANGUAGES = [
     ('en', 'English'),

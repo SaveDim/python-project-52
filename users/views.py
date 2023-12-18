@@ -1,46 +1,41 @@
-from django.contrib import messages
-from django.contrib.auth.models import User
-from django.shortcuts import redirect, render
-from django.urls import reverse_lazy as _
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from users.forms import UserCreateForm
+from .models import TaskManagerUser
 
 
 class UserListView(ListView):
-    model = User
+    model = TaskManagerUser
     template_name = "users/user_list.html"
     context_object_name = "users"
     extra_context = {"header": _("Users")}
 
 
 class UserCreateView(CreateView):
-    form_class = UserCreateForm
     template_name = "users/user_create.html"
-    success_url = _("login")
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["header"] = _("Create user")
-        return context
-
-    def post(self, request, *args, **kwargs):
-        form = UserCreateForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'User created successfully!')
-            return redirect('user_login')
-        return render(request, 'users/user_create.html', {'form': form})
+    model = TaskManagerUser
+    form_class = UserCreateForm
+    success_url = reverse_lazy("user_login")
+    success_message = _("User created successfully!")
+    extra_context = {"header": _("Create user"),
+                     "button": _("Register")
+                     }
 
 
 class UserUpdateView(UpdateView):
-    model = User
-    template_name = "user_update.html"
-    fields = ["username", "email", "password", "first_name", "last_name"]
-    success_url = _("user_list")
+    model = TaskManagerUser
+    template_name = "users/user_create.html"
+    form_class = UserCreateForm
+    success_url = reverse_lazy("user_list")
+    success_message = _("User updated successfully!")
+    extra_context = {"header": _("Update user"),
+                     "button": _("Update")
+                     }
 
 
 class UserDeleteView(DeleteView):
-    model = User
+    model = TaskManagerUser
     template_name = "user_delete.html"
     success_url = _("user_list")
