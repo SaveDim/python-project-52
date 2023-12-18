@@ -10,13 +10,8 @@ from users.forms import UserCreateForm
 class UserListView(ListView):
     model = User
     template_name = "users/user_list.html"
-    table_context = {
-        'header': _("Users"),
-        'ID': _("ID"),
-        'username': _("username"),
-        'full_name': _("full name"),
-        'created_at': _("created at"),
-    }
+    context_object_name = "users"
+    extra_context = {"header": _("Users")}
 
 
 class UserCreateView(CreateView):
