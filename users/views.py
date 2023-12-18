@@ -7,6 +7,10 @@ from users.forms import UserCreateForm
 from .models import TaskManagerUser
 
 
+class IndexView(ListView):
+    template_name = "index.html"
+    extra_context = {"header": _("Users")}
+
 class UserListView(ListView):
     model = TaskManagerUser
     template_name = "users/user_list.html"
@@ -38,5 +42,9 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
 
 class UserDeleteView(DeleteView):
     model = TaskManagerUser
-    template_name = "user_delete.html"
-    success_url = _("user_list")
+    template_name = "users/user_delete.html"
+    success_url = reverse_lazy("user_list")
+    success_message = _("User deleted successfully!")
+    extra_context = {"header": _("Delete user"),
+                     "button": _("Yes, delete")
+                     }

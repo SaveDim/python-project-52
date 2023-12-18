@@ -1,24 +1,22 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.http import HttpResponse
 from django.utils.translation import gettext_lazy as _
-from django.views import View
-from django.views.generic import CreateView
-
-class IndexView(View):
-
-    def get(self, request, *args, **kwargs):
-        return HttpResponse('index.html')
+from django.views.generic import TemplateView
 
 
-class UserLoginView(CreateView):
-    form_class = UserCreationForm
-    template_name = "user_login.html"
-    success_url = _("index.html")
+class IndexView(TemplateView):
+    template_name = 'index.html'
+    extra_context = {'title': _('Task manager')}
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["header"] = _("Login user")
-        return context
+
+class UserLoginView(SuccessMessageMixin, LoginView):
+    template_name = 'users/user_create.html'
+    form_class = AuthenticationForm
+    next_page = reverse_lazy('home')
+    success_message = _('You are logged in')
+    extra_context = {
+        'title': _('Login'),
+        'button_text': _('Enter'),
+    }
