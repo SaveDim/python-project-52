@@ -9,7 +9,7 @@
 
 {% block content %}
     <h1 class="my-4">{{ header }}</h1>
-    <p>{% trans "Are you sure want to delete user" %}{{ user.first_name }} {{ user.last_name }}</p>
+    <p>{% trans "Are you sure want to delete user" %} {{ user.first_name }} {{ user.last_name }}</p>
     <form method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
